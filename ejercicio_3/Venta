@@ -1,0 +1,84 @@
+public class Venta {
+    private int cantidad;
+
+    public Venta(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    // Recibe un Producto como parámetro (objeto como parámetro)
+    public void aplicar(Producto producto) {
+        if (producto.reducirStock(cantidad)) {
+            double total = producto.getPrecio() * cantidad;
+            System.out.println("Venta realizada: " + cantidad + " x " + producto.getNombre());
+            System.out.println("Total a pagar: $" + String.format("%.2f", total));
+        }
+    }
+}
+
+--- Antes de vender ---
+Producto: Laptop | Precio: $750.50 | Stock: 5
+
+--- Venta válida (2 unidades) ---
+Venta realizada: 2 x Laptop
+Total a pagar: $1501.00
+Producto: Laptop | Precio: $750.50 | Stock: 3
+
+--- Venta inválida (10 unidades) ---
+Stock insuficiente.
+Producto: Laptop | Precio: $750.50 | Stock: 3
+
+public class Main {
+    public static void main(String[] args) {
+        Producto laptop = new Producto("Laptop", 750.50, 5);
+
+        System.out.println("--- Antes de vender ---");
+        laptop.mostrarProducto();
+
+        System.out.println("\n--- Venta válida (2 unidades) ---");
+        new Venta(2).aplicar(laptop);
+        laptop.mostrarProducto();
+
+        System.out.println("\n--- Venta inválida (10 unidades) ---");
+        new Venta(10).aplicar(laptop);
+        laptop.mostrarProducto();
+    }
+}
+
+public class Producto {
+    private String nombre;
+    private double precio;
+    private int stock;
+
+    public Producto(String nombre, double precio, int stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    // Solo actúa si hay stock suficiente. Devuelve true si se pudo reducir.
+    public boolean reducirStock(int cantidad) {
+        if (cantidad <= stock) {
+            stock -= cantidad;
+            return true;
+        }
+        System.out.println("Stock insuficiente.");
+        return false;
+    }
+
+    public void mostrarProducto() {
+        System.out.println("Producto: " + nombre + " | Precio: $" + String.format("%.2f", precio)
+                + " | Stock: " + stock);
+    }
+}
