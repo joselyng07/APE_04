@@ -1,0 +1,5 @@
+Préstamo exitoso: María Pérez (C.I. 1712345678) se llevó "Introducción a Java".
+No se pudo prestar: "Introducción a Java" no está disponible para Carlos Gómez.
+
+La usuaria devuelve el libro...
+Préstamo exitoso: Carlos Gómez (C.I. 1798765432) se llevó "Introducción a Java".
