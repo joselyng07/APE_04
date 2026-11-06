@@ -1,0 +1,57 @@
+public class Libro {
+    private String titulo;
+    private int anio;
+    private Autor autor; // objeto como atributo
+
+    public Libro(String titulo, int anio, Autor autor) {
+        this.titulo = titulo;
+        this.anio = anio;
+        this.autor = autor;
+    }
+
+    public void mostrarInformacion() {
+        System.out.println("Título: " + titulo);
+        System.out.println("Año: " + anio);
+        System.out.println("Autor: " + autor.getNombre());
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Autor autor1 = new Autor("Gabriel García Márquez", "Colombiana");
+        Autor autor2 = new Autor("Miguel de Cervantes", "Española");
+
+        Libro libro1 = new Libro("Cien años de soledad", 1967, autor1);
+        Libro libro2 = new Libro("Don Quijote de la Mancha", 1605, autor2);
+
+        libro1.mostrarInformacion();
+        System.out.println();
+        libro2.mostrarInformacion();
+    }
+}
+
+Título: Cien años de soledad
+Año: 1967
+Autor: Gabriel García Márquez
+
+Título: Don Quijote de la Mancha
+Año: 1605
+Autor: Miguel de Cervantes
+
+public class Autor {
+    private String nombre;
+    private String nacionalidad;
+
+    public Autor(String nombre, String nacionalidad) {
+        this.nombre = nombre;
+        this.nacionalidad = nacionalidad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+}
