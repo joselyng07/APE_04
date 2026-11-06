@@ -1,0 +1,9 @@
+Rectángulo de 4.0 x 6.0
+Área: 24.0
+Perímetro: 20.0
+¿Es cuadrado? No
+
+Rectángulo de 5.0 x 5.0
+Área: 25.0
+Perímetro: 20.0
+¿Es cuadrado? Sí
