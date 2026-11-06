@@ -1,0 +1,13 @@
+--- Saldos iniciales ---
+Ana -> saldo: $500.00
+Luis -> saldo: $200.00
+
+--- Transferencia válida ---
+Transferencia exitosa de $150.00 de Ana a Luis
+Ana -> saldo: $350.00
+Luis -> saldo: $350.00
+
+--- Transferencia que falla ---
+Transferencia fallida: fondos insuficientes en la cuenta de Ana
+Ana -> saldo: $350.00
+Luis -> saldo: $350.00
