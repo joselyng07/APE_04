@@ -1,0 +1,11 @@
+--- Antes de vender ---
+Producto: Laptop | Precio: $750.50 | Stock: 5
+
+--- Venta válida (2 unidades) ---
+Venta realizada: 2 x Laptop
+Total a pagar: $1501.00
+Producto: Laptop | Precio: $750.50 | Stock: 3
+
+--- Venta inválida (10 unidades) ---
+Stock insuficiente.
+Producto: Laptop | Precio: $750.50 | Stock: 3
